@@ -5,23 +5,23 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth";
 
 const MenuBar: React.FC = () => {
-	const pathname = window.location.pathname;
-	const path = pathname === "/" ? "home" : pathname.substr(1);
-	const [activeItem, setActiveItem] = useState<string | undefined>(path);
+	// const pathname = window.location.pathname;
+	// const path = pathname === "/" ? "home" : pathname.substr(1);
+	// const [activeItem, setActiveItem] = useState<string | undefined>(path);
 
 	const { user, logout } = useContext(AuthContext);
 
-	const handleItemClick = (
-		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-		data: MenuItemProps
-	) => setActiveItem(data.name);
+	// const handleItemClick = (
+	// 	e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+	// 	data: MenuItemProps
+	// ) => setActiveItem(data.name);
 
 	const menuBar = user ? (
 		<Menu pointing secondary size="huge" color="grey">
 			<Menu.Item
 				name={user.username}
 				icon="user secret"
-				active
+				// active
 				as={Link}
 				to="/"
 			/>
@@ -34,8 +34,8 @@ const MenuBar: React.FC = () => {
 			<Menu.Item
 				name="home"
 				icon="connectdevelop"
-				active={activeItem === "home"}
-				onClick={handleItemClick}
+				// active={activeItem === "home"}
+				// onClick={handleItemClick}
 				as={Link}
 				to="/"
 			/>
@@ -43,16 +43,16 @@ const MenuBar: React.FC = () => {
 				<Menu.Item
 					name="login"
 					icon="sign-in"
-					active={activeItem === "login"}
-					onClick={handleItemClick}
+					// active={activeItem === "login"}
+					// onClick={handleItemClick}
 					as={Link}
 					to="/login"
 				/>
 				<Menu.Item
 					name="register"
 					icon="signup"
-					active={activeItem === "register"}
-					onClick={handleItemClick}
+					// active={activeItem === "register"}
+					// onClick={handleItemClick}
 					as={Link}
 					to="/register"
 				/>

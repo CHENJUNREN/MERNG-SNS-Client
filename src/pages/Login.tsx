@@ -37,7 +37,8 @@ const Login: React.FC<Props> = ({ history }) => {
 	const [loginUser, { loading }] = useMutation(LOGIN_USER, {
 		update: (_, { data: { login: userData } }) => {
 			context.login(userData);
-			history.push("/");
+			// history.push("/");
+			history.goBack();
 		},
 		onError: (err) => {
 			if (err.graphQLErrors[0].extensions) {
